@@ -18,9 +18,12 @@ public class revert_algo {
         return revertArray(data);
     }
     public static int[] revertArray(int[] data){
-
-        for(int i=data.length-1;i>=0;i--)
-            data[i] + "  ";
-    }
+        int[] revertedarray = new int[data.length];
+        int j = data.length;
+        for (int i = 0; i < data.length; i++) {
+            revertedarray[j - 1] = data[i];
+            j = j - 1;
+        }
+        return revertedarray;
     }
 }

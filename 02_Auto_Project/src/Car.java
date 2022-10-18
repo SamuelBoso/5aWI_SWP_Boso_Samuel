@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Car {
     // Instanz / Gedächtnisvariable
     private String brand;
@@ -7,11 +10,15 @@ public class Car {
     private String manufacturer;
     private int amountofrepitions;
 
+    private List<RearMirror> mirrors;
+    private List<Tires> tires;
+
     public Car(String brand, String serialNumber,Engine engine)
     {
         this.brand = brand;
         this.serialNumber = serialNumber;
         this.engine = engine;
+        this.mirrors = new ArrayList<>();
     }
     public void getInfo(){
         System.out.println("Dieses Auto wurde von " + this.brand + "gebaut und besitzt insgesamt" + engine.getHorsepower() + " PS");
@@ -39,5 +46,19 @@ public class Car {
         engine.getRemainingRange();
     }
 
+    public void addMirror(RearMirror rearMirror){
+        this.mirrors.add(rearMirror);
+    }
 
+    public List<RearMirror> getMirrors() {
+        return mirrors;
+    }
+
+    public List<Tires> getTires() {
+        return tires;
+    }
+
+    public void addTires(Tires tires){
+        this.tires.add(tires);
+    }
 }
